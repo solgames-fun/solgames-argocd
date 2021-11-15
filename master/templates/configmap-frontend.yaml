@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Values.frontend.app_name }}
+  namespace: {{ .Values.environment }}-master
+  labels:
+    app: {{ .Values.frontend.app_name }}
+    env: {{ .Values.environment }}
+data:
+  ENV : {{ Values.environment }}
+  REACT_APP_BACKEND_API_URL: "https://{{ .Values.domainname }}"
+

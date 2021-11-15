@@ -1,0 +1,21 @@
+####Master####
+environment: demo
+####Backend App Configuration####
+backend:
+  ##### Environment Detail####
+  app_name: backend
+  app_port:
+  db_type:
+  knex_db_type:
+  db_host:
+  db_username:
+  db_password:
+  db_database:
+  jwt_secret:
+  ##### Deployment Details####
+  replicas: 2
+
+  ####Image Details####
+  repo:
+  tag:
+
