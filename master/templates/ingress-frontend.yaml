@@ -6,7 +6,7 @@ metadata:
     nginx.ingress.kubernetes.io/rewrite-target: /
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
   name: {{ .Values.frontend.app_name }}
-  namespace: {{ .Values.frontend.app_name }}-master
+  namespace: {{ .Values.environment }}-master
 spec:
   rules:
   - host: {{ .Values.domainname }}

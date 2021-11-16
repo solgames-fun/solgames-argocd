@@ -7,11 +7,11 @@ metadata:
     app: {{ .Values.backend.app_name }}
     env: {{ .Values.environment }}
 data:
-  APP_PORT: {{ default 3001 .Values.backend.app_port }}
-  DB_TYPE: {{ default mysql .Values.backend.db_type }}
-  KNEX_DB_TYPE : {{ default mysql .Values.backend.knex_db_type }}
+  APP_PORT: '{{ default 3001 .Values.backend.app_port }}'
+  DB_TYPE: {{ default "mysql" .Values.backend.db_type }}
+  KNEX_DB_TYPE : {{ default "mysql" .Values.backend.knex_db_type }}
   DB_HOST: {{ .Values.backend.db_host }}
-  DB_PORT : {{ default 3306 .Values.backend.db_host }}
+  DB_PORT : '{{ default 3306 .Values.backend.db_host }}'
   DB_USERNAME : "{{ .Values.backend.db_username }}"
   DB_PASSWORD : "{{ .Values.backend.db_password }}"
   DB_DATABASE : "{{ .Values.backend.db_database }}"

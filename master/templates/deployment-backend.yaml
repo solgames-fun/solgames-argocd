@@ -7,17 +7,6 @@ metadata:
     app: {{ .Values.backend.app_name }}
     environment: {{ .Values.environment }}
 spec:
-  affinity:
-        podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-          - podAffinityTerm:
-              labelSelector:
-                matchExpressions:
-                - key: app
-                  operator: In
-                  values:
-                  - {{ .Values.backend.app_name }}
-              topologyKey: failure-domain.beta.kubernetes.io/zone
   replicas: {{ .Values.backend.replicas }}
   selector:
     matchLabels:
@@ -30,13 +19,13 @@ spec:
     spec:
       containers:
       - name: {{ .Values.backend.app_name }}
-        image: {{ .Values.backend.repo }}/{{ .Values.backend.tag }}
+        image: {{ .Values.backend.repo }}:{{ .Values.backend.tag }}
         envFrom:
         - configMapRef:
-            name: {{ .Values.environment }}-{{ .Values.backend.app_name }}-master
+            name: {{ .Values.backend.app_name }}
         imagePullPolicy: Always
         ports:
-        - containerPort: 3001
+        - containerPort: 3000
           name: http-web
         
 

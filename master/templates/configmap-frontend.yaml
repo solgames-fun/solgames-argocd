@@ -7,6 +7,6 @@ metadata:
     app: {{ .Values.frontend.app_name }}
     env: {{ .Values.environment }}
 data:
-  ENV : {{ Values.environment }}
+  ENV : {{ .Values.environment }}
   REACT_APP_BACKEND_API_URL: "https://{{ .Values.domainname }}"
 
