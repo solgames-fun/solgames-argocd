@@ -7,7 +7,7 @@ spec:
   destination: 
     namespace: dev-master
     server: "https://kubernetes.default.svc"
-  project: dev-master
+  project: master
   source: 
     path: master
     repoURL: "ARGO_REPO_URL"
