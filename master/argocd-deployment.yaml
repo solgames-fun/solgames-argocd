@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: dev-master
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: dev-master
+    server: "https://kubernetes.default.svc"
+  project: dev-master
+  source: 
+    path: master
+    repoURL: "ARGO_REPO_URL"
+    targetRevision: HEAD
+  syncPolicy: 
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions: 
+      - CreateNamespace=true
+
