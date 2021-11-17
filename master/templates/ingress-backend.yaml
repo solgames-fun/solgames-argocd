@@ -3,7 +3,8 @@ kind: Ingress
 metadata:
   annotations:
     nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: /api
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
   name: {{ .Values.backend.app_name }}
   namespace: {{ .Values.environment }}-master
@@ -17,7 +18,7 @@ spec:
             name: {{ .Values.backend.app_name }}-svc
             port:
               number: 80
-        path: /
+        path: /api
         pathType: ImplementationSpecific
   tls:
   - hosts:
