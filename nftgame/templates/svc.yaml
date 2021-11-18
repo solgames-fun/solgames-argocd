@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nftgame
+  namespace: apps
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: nftgame
+  type: ClusterIP
+status:
+  loadBalancer: {}

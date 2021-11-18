@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: APP_NAME_PLACEHOLDER-argo-obj
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: NAMESPACE_PLACEHOLDER
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: APP_NAME_PLACEHOLDER
+    repoURL: "ARGO_REPO_URL"
+    targetRevision: HEAD
+  syncPolicy: 
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions: 
+      - CreateNamespace=true
