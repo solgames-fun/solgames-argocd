@@ -21,7 +21,3 @@ spec:
               number: 80
         path: /api
         pathType: ImplementationSpecific
-  tls:
-  - hosts:
-    - {{ .Values.domainname }}
-    secretName: tls-secret
