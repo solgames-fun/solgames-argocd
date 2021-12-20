@@ -1,11 +1,11 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: dev-master
+  name: demo-master
   namespace: argocd
 spec: 
   destination: 
-    namespace: dev-master
+    namespace: demo-master
     server: "https://kubernetes.default.svc"
   project: master
   source: 
