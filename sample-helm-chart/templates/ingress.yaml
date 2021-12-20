@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: $request_uri
+    kubernetes.io/ingress.class: nginx 
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  name: APP_NAME_PLACEHOLDER
+  namespace: NAMESPACE_PLACEHOLDER
+spec:
+  rules:
+  - host: DOMAIN_PLACEHOLDER
+    http:
+      paths:
+      - backend:
+          service:
+            name: APP_NAME_PLACEHOLDER
+            port:
+              number: APP_PORT_PLACEHOLDER
+        path: /
+        pathType: ImplementationSpecific
