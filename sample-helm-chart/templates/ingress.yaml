@@ -11,7 +11,7 @@ metadata:
   namespace: NAMESPACE_PLACEHOLDER
 spec:
   rules:
-  - host: DOMAIN_PLACEHOLDER
+  - host: GAME_DOMAIN_PLACEHOLDER
     http:
       paths:
       - backend:
