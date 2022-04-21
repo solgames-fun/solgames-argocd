@@ -1,3 +1,3 @@
 replicas: 1
-image: dockerghosh/solana-games:160
+image: dockerghosh/solana-games:162
 
