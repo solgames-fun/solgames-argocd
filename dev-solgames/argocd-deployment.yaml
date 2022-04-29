@@ -10,7 +10,7 @@ spec:
   project: default
   source: 
     path: dev-solgames
-    repoURL: "ARGO_REPO_URL"
+    repoURL: "https://github.com/solgames-fun/solgames-argocd.git"
     targetRevision: HEAD
   syncPolicy: 
     automated: 
