@@ -11,7 +11,7 @@ metadata:
   namespace: nft-create-solana
 spec:
   rules:
-  - host: testgame.solgames.fun
+  - host: testgame.solmates.in
     http:
       paths:
       - backend:

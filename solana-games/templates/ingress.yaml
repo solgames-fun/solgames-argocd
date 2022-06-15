@@ -11,7 +11,7 @@ metadata:
   namespace: solana-games-now
 spec:
   rules:
-  - host: solanagamesnow.solgames.fun
+  - host: solanagamesnow.solmates.in
     http:
       paths:
       - backend:
