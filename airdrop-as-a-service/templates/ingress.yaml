@@ -11,7 +11,7 @@ metadata:
   namespace: airdrop
 spec:
   rules:
-  - host: airdrop.solgames.fun
+  - host: airdrop.solmates.in
     http:
       paths:
       - backend:
