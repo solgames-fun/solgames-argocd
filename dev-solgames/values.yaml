@@ -1,7 +1,7 @@
 ####Master####
 environment: dev
-rootdomainname: solgames.fun
-domainname: dev.solgames.fun
+rootdomainname: solmates.in
+domainname: dev.solmates.in
 ####Backend App Configuration####
 backend:
 ##### Environment Detail####
@@ -19,7 +19,7 @@ backend:
   replicas: 1
 ####Image Details####
   repo: dockerghosh/solgames-backend
-  tag: v1
+  tag: 0.8
 
 ####Front End App Configuration####
 frontend:
@@ -29,6 +29,6 @@ frontend:
   replicas: 1
 ####Image Details####
   repo: dockerghosh/solgames-frontend
-  tag: 0.1
+  tag: 0.11
 
 
