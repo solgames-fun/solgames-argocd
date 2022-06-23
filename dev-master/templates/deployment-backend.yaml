@@ -7,7 +7,7 @@ metadata:
     app: {{ .Values.backend.app_name }}
     environment: {{ .Values.environment }}
 spec:
-  replicas: {{ .Values.backend.replicas }}
+  replicas: {{ .Values.backend.backendreplicas }}
   selector:
     matchLabels:
       app: {{ .Values.backend.app_name }}
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: {{ .Values.backend.app_name }}
-        image: {{ .Values.backend.repo }}:{{ .Values.backend.tag }}
+        image: {{ .Values.backend.backendrepo }}:{{ .Values.backend.backendtag }}
         envFrom:
         - configMapRef:
             name: {{ .Values.backend.app_name }}

@@ -4,7 +4,7 @@ rootdomainname: solmates.in
 domainname: dev.solmates.in
 ####Backend App Configuration####
 backend:
-##### Environment Detail####
+  ##### Environment Detail####
   app_name: backend
   app_port: 3001
   db_type: mysql
@@ -16,20 +16,16 @@ backend:
   db_database: template
   jwt_secret: secret
   ##### Deployment Details####
-  replicas: 1
-####Image Details####
-  repo: dockerghosh/solgames-backend
-  tag: 0.8
-
+  backendreplicas: 1
+  ####Image Details####
+  backendrepo: dockerghosh/solgames-backend
+  backendtag: 0.8
 ####Front End App Configuration####
 frontend:
-##### Environment Detail####
-  app_name: frontend 
+  ##### Environment Detail####
+  app_name: frontend
   ##### Deployment Details####
-  replicas: 1
-####Image Details####
-  repo: dockerghosh/solgames-frontend
-  tag: 0.11
-
-
-
+  frontendreplicas: 1
+  ####Image Details####
+  frontendrepo: dockerghosh/solgames-frontend
+  frontend: 0.11
