@@ -21,7 +21,7 @@ backend:
   backendrepo: dockerghosh/solgames-backend
   backendtag: 0.8
 ####Front End App Configuration####
-frontend: 0.11
+frontend:
   ##### Environment Detail####
   app_name: frontend
   ##### Deployment Details####
