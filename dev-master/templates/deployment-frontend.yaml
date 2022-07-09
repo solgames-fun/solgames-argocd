@@ -7,6 +7,22 @@ metadata:
     app: {{ .Values.frontend.app_name }}
     environment: {{ .Values.environment }}
 spec:
+  affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: subnet
+                operator: In
+                values:
+                - private
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              topologyKey: failure-domain.beta.kubernetes.io/zone
+            weight: 100
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - topologyKey: kubernetes.io/hostname
   replicas: {{ .Values.frontend.frontendreplicas }}
   selector:
     matchLabels:
