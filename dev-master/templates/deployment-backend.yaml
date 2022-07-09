@@ -7,7 +7,17 @@ metadata:
     app: {{ .Values.backend.app_name }}
     environment: {{ .Values.environment }}
 spec:
-  affinity:
+  replicas: {{ .Values.backend.backendreplicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.backend.app_name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.backend.app_name }}
+        environment: {{ .Values.environment }}
+    spec:
+      affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
@@ -23,16 +33,6 @@ spec:
             weight: 100
           requiredDuringSchedulingIgnoredDuringExecution:
           - topologyKey: kubernetes.io/hostname
-  replicas: {{ .Values.backend.backendreplicas }}
-  selector:
-    matchLabels:
-      app: {{ .Values.backend.app_name }}
-  template:
-    metadata:
-      labels:
-        app: {{ .Values.backend.app_name }}
-        environment: {{ .Values.environment }}
-    spec:
       containers:
       - name: {{ .Values.backend.app_name }}
         image: {{ .Values.backend.backendrepo }}:{{ .Values.backend.backendtag }}
