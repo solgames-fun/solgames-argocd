@@ -8,12 +8,12 @@ backend:
   app_name: backend
   app_port: 3001
   db_type: mysql
-  db_port: 3306
+  db_port: 5432
   knex_db_type: mysql
-  db_host: mysql-solgames.cfe1wp4muyzj.ap-south-1.rds.amazonaws.com
-  db_username: admin
+  db_host: postgre-solgames.cfe1wp4muyzj.ap-south-1.rds.amazonaws.com
+  db_username: postgres
   db_password: Devops!1234#
-  db_database: template
+  db_database: solgames
   jwt_secret: secret
   ##### Deployment Details####
   backendreplicas: 1
