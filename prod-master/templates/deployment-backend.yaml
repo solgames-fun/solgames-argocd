@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.backend.app_name }}
+  namespace: {{ .Values.environment }}-master
+  labels:
+    app: {{ .Values.backend.app_name }}
+    environment: {{ .Values.environment }}
+spec:
+  replicas: {{ .Values.backend.backendreplicas }}
+  selector:
+    matchLabels:
+      app: {{ .Values.backend.app_name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.backend.app_name }}
+        environment: {{ .Values.environment }}
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: subnet
+                operator: In
+                values:
+                - private
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              topologyKey: failure-domain.beta.kubernetes.io/zone
+            weight: 100
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - topologyKey: kubernetes.io/hostname
+      containers:
+      - name: {{ .Values.backend.app_name }}
+        image: {{ .Values.backend.backendrepo }}:{{ .Values.backend.backendtag }}
+        envFrom:
+        - configMapRef:
+            name: {{ .Values.backend.app_name }}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 3001
+          name: http-web
+        
+

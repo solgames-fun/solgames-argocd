@@ -1,0 +1,31 @@
+####Master####
+environment: prod
+rootdomainname: solgames.fun
+domainname: www.solgames.fun
+####Backend App Configuration####
+backend:
+  ##### Environment Detail####
+  app_name: backend
+  app_port: 3001
+  db_type: mysql
+  db_port: 5432
+  knex_db_type: mysql
+  db_host: postgre-solgames.cfe1wp4muyzj.ap-south-1.rds.amazonaws.com
+  db_username: postgres
+  db_password: Devops!1234#
+  db_database: solgames
+  jwt_secret: secret
+  ##### Deployment Details####
+  backendreplicas: 1
+  ####Image Details####
+  backendrepo: dockerghosh/solgames-backend
+  backendtag: 0.13
+####Front End App Configuration####
+frontend:
+  ##### Environment Detail####
+  app_name: frontend
+  ##### Deployment Details####
+  frontendreplicas: 1
+  ####Image Details####
+  frontendrepo: dockerghosh/solgames-frontend
+  frontendtag: 0.21
