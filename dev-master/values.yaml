@@ -1,7 +1,7 @@
 ####Master####
 environment: dev
-rootdomainname: solmates.in
-domainname: dev.solmates.in
+rootdomainname: solgames.fun
+domainname: dev.solgames.fun
 ####Backend App Configuration####
 backend:
   ##### Environment Detail####
