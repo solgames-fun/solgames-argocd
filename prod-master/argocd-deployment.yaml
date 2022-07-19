@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata: 
-  name: dev-master
+  name: prod-master
   namespace: argocd
 spec: 
   destination: 
@@ -9,7 +9,7 @@ spec:
     server: "https://kubernetes.default.svc"
   project: default
   source: 
-    path: dev-master
+    path: prod-master
     repoURL: "https://github.com/solgames-fun/solgames-argocd.git"
     targetRevision: HEAD
   syncPolicy: 
