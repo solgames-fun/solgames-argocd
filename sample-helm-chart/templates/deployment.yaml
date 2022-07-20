@@ -29,6 +29,9 @@ spec:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
           - podAffinityTerm:
+              labelSelector:
+                  matchLabels:
+                    app: APP_NAME_PLACEHOLDER
               topologyKey: failure-domain.beta.kubernetes.io/zone
             weight: 100
           requiredDuringSchedulingIgnoredDuringExecution:
