@@ -31,7 +31,7 @@ spec:
           - podAffinityTerm:
               labelSelector:
                   matchLabels:
-                    app: {{ .Values.frontend.app_name }}
+                    app: {{ .Values.backend.app_name }}
               topologyKey: failure-domain.beta.kubernetes.io/zone
             weight: 100
           requiredDuringSchedulingIgnoredDuringExecution:
