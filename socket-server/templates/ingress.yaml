@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/rewrite-target: $request_uri
+    kubernetes.io/ingress.class: nginx 
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+  name: {{ .Values.app_name }}
+  namespace: {{ .Values.app_name }}-{{ .Values.environment }}
+spec:
+  rules:
+  - host: {{ .Values.domainname }}
+    http:
+      paths:
+      - backend:
+          service:
+            name: {{ .Values.app_name }}-svc
+            port:
+              number: 80
+        path: /api
+        pathType: ImplementationSpecific
