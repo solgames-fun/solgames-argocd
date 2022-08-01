@@ -1,0 +1,16 @@
+replicas: 2
+socketrepo: dockerghosh/solgames-socket-server
+socketrepotag: "0.1"
+environment: dev
+app_name: socket-server
+domainname: socket.solgames.fun
+socket:
+  socket_host: "http://localhost"
+  socket_server_port: 3002
+  socket_server_ssl_port: 3002
+  redis_host: "localhost"
+  redis_port: 6379
+  ssl_key_path: ""
+  ssl_cert_path: ""
+  reject_unauthorized_cert: false
+
