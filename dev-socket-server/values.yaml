@@ -14,7 +14,7 @@ socket_server_port: 3002
 socket_server_ssl_port: 3002
 redis_host: "localhost"
 redis_port: 6379
-ssl_key_path: ""
-ssl_cert_path: ""
+ssl_key_path: "NA"
+ssl_cert_path: "NA"
 reject_unauthorized_cert: false
 
