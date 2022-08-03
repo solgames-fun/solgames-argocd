@@ -1,3 +1,3 @@
 replicas: 1
-image: dockerghosh/react-hello:265
+image: dockerghosh/react-hello:266
 
