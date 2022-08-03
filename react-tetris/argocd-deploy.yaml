@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: react-tetris-argo-obj
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: tetris
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: react-tetris
+    repoURL: "https://github.com/solgames-fun/solgames-argocd.git"
+    targetRevision: HEAD
+  syncPolicy: 
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions: 
+      - CreateNamespace=true
