@@ -1,0 +1,3 @@
+replicas: 1
+image: dockerghosh/EightQueens:270
+
