@@ -1,3 +1,0 @@
-replicas: 1
-image: dockerghosh/tic-tac-toe:276
-
