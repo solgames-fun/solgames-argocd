@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: airdrop-as-a-service
+  name: airdrop-as-service
+spec:
+  replicas: {{ .Values.replicas }}
+  selector:
+    matchLabels:
+      app: airdrop-as-a-service
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: airdrop-as-a-service
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: subnet
+                operator: In
+                values:
+                - private
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - podAffinityTerm:
+              labelSelector:
+                  matchLabels:
+                    app: airdrop-as-a-service
+              topologyKey: failure-domain.beta.kubernetes.io/zone
+            weight: 100
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - topologyKey: kubernetes.io/hostname
+      containers:
+      - image: "{{ .Values.image }}" 
+        name: airdrop-as-a-service
+        command: ["/bin/bash","-c","npm run-script start"]
+        resources: {}
+status: {}

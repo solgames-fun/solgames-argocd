@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: airdrop-as-a-service
+  namespace: airdrop-as-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: airdrop-as-a-service
+  type: ClusterIP
+status:
+  loadBalancer: {}
