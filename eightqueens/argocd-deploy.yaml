@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: eightqueens-argo-obj
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: eighteueens
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: eightqueens
+    repoURL: "https://github.com/solgames-fun/solgames-argocd.git"
+    targetRevision: HEAD
+  syncPolicy: 
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions: 
+      - CreateNamespace=true
