@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: react-hello-argo-obj
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: solana-games-now
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: react-hello
+    repoURL: "https://github.com/solgames-fun/solgames-argocd.git"
+    targetRevision: HEAD
+  syncPolicy: 
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions: 
+      - CreateNamespace=true
