@@ -39,6 +39,5 @@ spec:
       containers:
       - image: "{{ .Values.image }}" 
         name: APP_NAME_PLACEHOLDER
-        command: ["/bin/bash","-c","npm run-script start"]
         resources: {}
 status: {}
