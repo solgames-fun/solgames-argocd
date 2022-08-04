@@ -39,6 +39,5 @@ spec:
       containers:
       - image: "{{ .Values.image }}" 
         name: tic-tac-toe
-        command: ["/bin/bash","-c","npm run-script start"]
         resources: {}
 status: {}
