@@ -1,3 +1,3 @@
 replicas: 1
-image: dockerghosh/cuberun-cuberun:319
+image: dockerghosh/cuberun-cuberun:320
 
