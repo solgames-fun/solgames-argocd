@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: tic-tac-toe-testflow-argo-obj
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: testflow
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: tic-tac-toe-testflow
+    repoURL: "https://github.com/solgames-fun/solgames-argocd.git"
+    targetRevision: HEAD
+  syncPolicy: 
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions: 
+      - CreateNamespace=true
