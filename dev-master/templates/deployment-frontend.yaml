@@ -36,13 +36,6 @@ spec:
       containers:
       - name: {{ .Values.frontend.app_name }}
         image: {{ .Values.frontend.frontendrepo }}:{{ .Values.frontend.frontendtag }}
-        resources:
-          requests:
-            memory: "1.5Gi"
-            cpu: "2m"
-          limits:
-            memory: "2Gi"
-            cpu: "5m"
         envFrom:
         - configMapRef:
             name: {{ .Values.frontend.app_name }}
