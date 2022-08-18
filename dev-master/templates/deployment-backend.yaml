@@ -36,13 +36,6 @@ spec:
       containers:
       - name: {{ .Values.backend.app_name }}
         image: {{ .Values.backend.backendrepo }}:{{ .Values.backend.backendtag }}
-        resources:
-          requests:
-            memory: "500Mi"
-            cpu: "2m"
-          limits:
-            memory: "750Mi"
-            cpu: "5m"
         envFrom:
         - configMapRef:
             name: {{ .Values.backend.app_name }}
