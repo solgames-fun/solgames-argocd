@@ -19,7 +19,7 @@ backend:
   backendreplicas: 2
   ####Image Details####
   backendrepo: dockerghosh/solgames-backend
-  backendtag: 0.25
+  backendtag: 0.26
 ####Front End App Configuration####
 frontend:
   ##### Environment Detail####
