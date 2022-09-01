@@ -1,7 +1,7 @@
 #### Build Details####
 replicas: 2
 socketrepo: dockerghosh/solgames-socket-server
-socketrepotag: "0.4"
+socketrepotag: "0.5"
 
 ####Domain Details####
 environment: dev
