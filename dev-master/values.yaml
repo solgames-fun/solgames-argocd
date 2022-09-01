@@ -20,6 +20,9 @@ backend:
   ####Image Details####
   backendrepo: dockerghosh/solgames-backend
   backendtag: 0.27
+  redis_port:
+  redis_host:
+  redis_password:
 ####Front End App Configuration####
 frontend:
   ##### Environment Detail####
