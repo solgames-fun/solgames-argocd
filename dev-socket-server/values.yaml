@@ -10,10 +10,10 @@ domainname: dev-socket.solgames.fun
 
 ##### Config Map Details####
 socket_host: "https://dev-socket.solgames.fun"
-socket_server_port: 3002
-socket_server_ssl_port: 3002
+socket_server_port: '3002'
+socket_server_ssl_port: '3002'
 redis_host: "solgames-redis.egujsn.ng.0001.aps1.cache.amazonaws.com"
-redis_port: 6379
+redis_port: '6379'
 ssl_key_path: "NA"
 ssl_cert_path: "NA"
 reject_unauthorized_cert: false
