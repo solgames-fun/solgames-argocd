@@ -20,9 +20,9 @@ backend:
   ####Image Details####
   backendrepo: dockerghosh/solgames-backend
   backendtag: 0.27
-  redis_port:
-  redis_host:
-  redis_password:
+  redis_port: 6379
+  redis_host: solgames-redis.egujsn.ng.0001.aps1.cache.amazonaws.com
+  redis_password: ""
 ####Front End App Configuration####
 frontend:
   ##### Environment Detail####
