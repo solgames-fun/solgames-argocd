@@ -17,4 +17,6 @@ data:
   DB_DATABASE : "{{ .Values.backend.db_database }}"
   JWT_SECRET : "{{ .Values.backend.jwt_secret }}"
   ENV : {{ .Values.environment }}
+  REDIS_PORT: '{{ default 6379 .Values.backend.redis_port }}'
+  REDIS_HOST: "{{ .Values.backend.redis_host }}"
 
