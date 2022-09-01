@@ -7,11 +7,11 @@ metadata:
     app: {{ .Values.app_name }}
     env: {{ .Values.environment }}
 data:
-  SOCKET_HOST: {{ .Values.socket_host }}
-  SOCKET_SERVER_PORT: {{ .Values.socket_server_port }}
-  SOCKET_SERVER_SSL_PORT: {{ .Values.socket_server_ssl_port }}
-  REDIS_HOST: {{ .Values.redis_host}}
-  REDIS_PORT: {{ .Values.redis_port }}
-  SSL_KEY_PATH: {{ .Values.ssl_key_path }}
-  SSL_CERT_PATH: {{ .Values.ssl_cert_path }}
-  REJECT_UNAUTHORIZED_CERT: {{ .Values.reject_unauthorized_cert }}
+  SOCKET_HOST: '{{ .Values.socket_host }}'
+  SOCKET_SERVER_PORT: '{{ .Values.socket_server_port }}'
+  SOCKET_SERVER_SSL_PORT: '{{ .Values.socket_server_ssl_port }}'
+  REDIS_HOST: '{{ .Values.redis_host}}'
+  REDIS_PORT: '{{ .Values.redis_port }}'
+  SSL_KEY_PATH: '{{ .Values.ssl_key_path }}'
+  SSL_CERT_PATH: '{{ .Values.ssl_cert_path }}'
+  REJECT_UNAUTHORIZED_CERT: '{{ .Values.reject_unauthorized_cert }}'
