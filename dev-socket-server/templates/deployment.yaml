@@ -34,8 +34,15 @@ spec:
           requiredDuringSchedulingIgnoredDuringExecution:
           - topologyKey: kubernetes.io/hostname
       containers:
+      volumes:
+        - configMap:
+          name: clusters-config-file
+      name: ca-pemstore
       - name: {{ .Values.app_name }}
         image: {{ .Values.socketrepo }}:{{ .Values.socketrepotag }}
+        volumeMounts:
+        - name: config-ssl-certs
+          mountPath: /etc/ssl/certs
         envFrom:
         - configMapRef:
             name: {{ .Values.app_name }}
