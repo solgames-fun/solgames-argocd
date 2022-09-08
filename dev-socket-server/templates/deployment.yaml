@@ -39,6 +39,8 @@ spec:
         volumeMounts:
         - name: config-ssl-certs
           mountPath: /etc/ssl/certs
+        - name: config-ssl-key
+          mountPath: /etc/ssl/cert-key
         envFrom:
         - configMapRef:
             name: {{ .Values.app_name }}
@@ -50,4 +52,7 @@ spec:
         - name: config-ssl-certs
           configMap:
             name: ca-pemstore
+        - name: config-ssl-key
+          configMap:
+            name: ca-pemstore-key
   
