@@ -17,6 +17,7 @@ spec:
         app: {{ .Values.frontend.app_name }}
         environment: {{ .Values.environment }}
     spec:
+      serviceAccountName: aws-s3-sa
       affinity:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
