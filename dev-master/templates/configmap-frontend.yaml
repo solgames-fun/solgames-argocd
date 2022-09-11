@@ -9,4 +9,7 @@ metadata:
 data:
   ENV : {{ .Values.environment }}
   REACT_APP_BACKEND_API_URL: "https://{{ .Values.domainname }}"
-
+  REACT_APP_AWS_ACCESS_KEY_ID: "{{ .Values.frontend.aws_access_key_id }}"
+  REACT_APP_AWS_SECRET_ACCESS_KEY: "{{ .Values.frontend.aws_secret_access_key }}"
+  REACT_APP_AWS_REGION: "{{ .Values.frontend.aws_region }}"
+  REACT_APP_AWS_BUCKET: "{{ .Values.frontend.bucket_name }}"
