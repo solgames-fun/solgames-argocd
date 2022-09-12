@@ -14,5 +14,5 @@ socket_server_port: '3002'
 socket_server_ssl_port: '3002'
 redis_host: "solgames-redis.egujsn.ng.0001.aps1.cache.amazonaws.com"
 redis_port: '6379'
-ssl_key_path: "/etc/ssl/cert-key/cert.key"
+ssl_key_path: "/etc/ssl/certs/cert.crt"
 ssl_cert_path: "/etc/ssl/certs/cert.crt"
