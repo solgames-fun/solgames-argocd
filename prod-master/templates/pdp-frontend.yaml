@@ -1,7 +1,7 @@
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
- name: {{ .Values.front.app_name }}
+ name: {{ .Values.frontend.app_name }}
  namespace: {{ .Values.environment }}-master
 spec:
  minAvailable: 2
