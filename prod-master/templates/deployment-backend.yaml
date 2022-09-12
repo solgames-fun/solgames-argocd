@@ -44,7 +44,7 @@ spec:
             initialDelaySeconds: 60
             failureThreshold: 3
             httpGet:
-              path: /
+              path: /api/category/getAll
               port: 3001
               scheme: HTTP
             periodSeconds: 30
@@ -57,7 +57,7 @@ spec:
             initialDelaySeconds: 60
             failureThreshold: 3
             httpGet:
-              path: /
+              path: /api/category/getAll
               port: 3001
               scheme: HTTP
             periodSeconds: 30
