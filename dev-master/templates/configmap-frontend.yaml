@@ -13,3 +13,4 @@ data:
   REACT_APP_AWS_SECRET_ACCESS_KEY: "{{ .Values.frontend.aws_secret_access_key }}"
   REACT_APP_AWS_REGION: "{{ .Values.frontend.aws_region }}"
   REACT_APP_AWS_BUCKET: "{{ .Values.frontend.bucket_name }}"
+  REACT_APP_AUTH_TYPE: "{{ .Values.frontend.auth_type }}"

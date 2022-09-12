@@ -36,3 +36,4 @@ frontend:
   aws_secret_access_key: 'CIs5LtDWewkp9tfZ3JMgRoZJpQQuPwUZFXCE23u5'
   aws_region: 'ap-south-1'
   bucket_name: 'solgames-games-data'
+  auth_type: 'development'
