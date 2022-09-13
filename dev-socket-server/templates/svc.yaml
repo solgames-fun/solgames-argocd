@@ -9,7 +9,7 @@ spec:
   ports:
     - port: 80
       targetPort: http-web
-      protocol: HTTPS
+      protocol: TCP
       name: http
   selector:
     app: {{ .Values.app_name }}
