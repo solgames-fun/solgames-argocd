@@ -36,4 +36,5 @@ frontend:
   aws_secret_access_key: ''
   aws_region: 'ap-south-1'
   bucket_name: 'solgames-games-data'
-  auth_type: ''
+  ### it can been production/development. Development will be based on access keys and prodution will be based on IAM profile.
+  auth_type: 'production'
