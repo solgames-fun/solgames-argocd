@@ -31,7 +31,7 @@ frontend:
   frontendreplicas: 2
   ####Image Details####
   frontendrepo: dockerghosh/solgames-frontend
-  frontendtag: 0.72
+  frontendtag: 0.73
   aws_access_key_id: 'AKIARKDL3BUP3LW56THX'
   aws_secret_access_key: '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'
   aws_region: 'ap-south-1'
