@@ -7,9 +7,9 @@ backend:
   ##### Environment Detail####
   app_name: backend
   app_port: 3001
-  db_type: mysql
+  db_type: pg
   db_port: 5432
-  knex_db_type: mysql
+  knex_db_type: pg
   db_host: postgre-solgames.cfe1wp4muyzj.ap-south-1.rds.amazonaws.com
   db_username: postgres
   db_password: Devops!1234#
