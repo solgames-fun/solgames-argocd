@@ -7,9 +7,9 @@ backend:
   ##### Environment Detail####
   app_name: backend
   app_port: 3001
-  db_type: mysql
+  db_type: pg
   db_port: 5432
-  knex_db_type: mysql
+  knex_db_type: pg
   db_host: postgre-solgames.cfe1wp4muyzj.ap-south-1.rds.amazonaws.com
   db_username: postgres
   db_password: Devops!1234#
@@ -19,9 +19,9 @@ backend:
   backendreplicas: 2
   ####Image Details####
   backendrepo: dockerghosh/solgames-backend
-  backendtag: 0.30
+  backendtag: 0.31
   redis_port: 6379
-  redis_host: solgames-redis.egujsn.ng.0001.aps1.cache.amazonaws.com
+  redis_host: solgames-redis-dev.egujsn.ng.0001.aps1.cache.amazonaws.com
   redis_password: ""
 ####Front End App Configuration####
 frontend:
@@ -31,7 +31,7 @@ frontend:
   frontendreplicas: 2
   ####Image Details####
   frontendrepo: dockerghosh/solgames-frontend
-  frontendtag: 0.72
+  frontendtag: 0.87
   aws_access_key_id: 'AKIARKDL3BUP3LW56THX'
   aws_secret_access_key: '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'
   aws_region: 'ap-south-1'
