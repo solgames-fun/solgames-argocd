@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cuberun-cuberundemo
+  namespace: cuberundemo
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 3000
+  selector:
+    app: cuberun-cuberundemo
+  type: ClusterIP
+status:
+  loadBalancer: {}
