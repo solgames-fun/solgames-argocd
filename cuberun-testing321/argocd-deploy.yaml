@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata: 
+  name: cuberun-testing321-argo-obj
+  namespace: argocd
+spec: 
+  destination: 
+    namespace: testing321
+    server: "https://kubernetes.default.svc"
+  project: default
+  source: 
+    path: cuberun-testing321
+    repoURL: "https://github.com/solgames-fun/solgames-argocd.git"
+    targetRevision: HEAD
+  syncPolicy: 
+    automated: 
+      prune: true
+      selfHeal: true
+    syncOptions: 
+      - CreateNamespace=true
