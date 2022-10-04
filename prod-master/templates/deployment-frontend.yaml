@@ -30,9 +30,6 @@ spec:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
           - podAffinityTerm:
-              labelSelector:
-                  matchLabels:
-                    app: {{ .Values.frontend.app_name }}
               topologyKey: failure-domain.beta.kubernetes.io/zone
             weight: 100
           requiredDuringSchedulingIgnoredDuringExecution:
@@ -44,6 +41,26 @@ spec:
         - configMapRef:
             name: {{ .Values.frontend.app_name }}
         imagePullPolicy: Always
+        livenessProbe:
+            initialDelaySeconds: 60
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 2
         ports:
-        - containerPort: 3000
+        - containerPort: 80
           name: http-web
+        readinessProbe:
+            initialDelaySeconds: 60
+            failureThreshold: 3
+            httpGet:
+              path: /
+              port: 80
+              scheme: HTTP
+            periodSeconds: 30
+            successThreshold: 1
+            timeoutSeconds: 2
