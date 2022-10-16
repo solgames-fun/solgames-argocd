@@ -16,7 +16,7 @@ backend:
   db_database: solgames
   jwt_secret: secret
   ##### Deployment Details####
-  backendreplicas: 2
+  backendreplicas: 3
   ####Image Details####
   backendrepo: dockerghosh/solgames-backend
   backendtag: 0.13
@@ -26,7 +26,7 @@ frontend:
   ##### Environment Detail####
   app_name: frontend
   ##### Deployment Details####
-  frontendreplicas: 2
+  frontendreplicas: 3
   ####Image Details####
   frontendrepo: dockerghosh/solgames-frontend
   frontendtag: '0.132'
