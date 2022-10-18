@@ -29,4 +29,4 @@ frontend:
   frontendreplicas: 2
   ####Image Details####
   frontendrepo: dockerghosh/solgames-frontend
-  frontendtag: '0.141'
+  frontendtag: '0.143'
