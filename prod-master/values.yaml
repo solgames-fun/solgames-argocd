@@ -16,7 +16,7 @@ backend:
   db_database: solgames
   jwt_secret: secret
   ##### Deployment Details####
-  backendreplicas: 3
+  backendreplicas: 2
   ####Image Details####
   backendrepo: dockerghosh/solgames-backend
   backendtag: 0.13
